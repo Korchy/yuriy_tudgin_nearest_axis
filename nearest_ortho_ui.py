@@ -4,6 +4,7 @@
 # GitHub
 #    https://github.com/Korchy/yuriy_tudgin_nearest_ortho
 
+import bpy
 from bpy.types import Panel
 from bpy.utils import register_class, unregister_class
 
@@ -24,4 +25,5 @@ def register():
 
 
 def unregister():
-    unregister_class(NEAREST_ORTHO_PT_panel)
+    if hasattr(bpy.types, 'NEAREST_ORTHO_PT_panel'):
+        unregister_class(NEAREST_ORTHO_PT_panel)

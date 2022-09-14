@@ -6,7 +6,10 @@
 
 from . import nearest_ortho_ops
 from . import nearest_ortho_ui
+from . import nearest_ortho_prefs
+from . import nearest_ortho_keymap
 from .addon import Addon
+import bpy
 
 
 bl_info = {
@@ -24,8 +27,11 @@ bl_info = {
 
 def register():
     if not Addon.dev_mode():
+        nearest_ortho_prefs.register()
         nearest_ortho_ops.register()
-        nearest_ortho_ui.register()
+        if bpy.context.preferences.addons[__package__].preferences.panel_viewport:
+            nearest_ortho_ui.register()
+        nearest_ortho_keymap.register()
     else:
         print('It seems you are trying to use the dev version of the '
            + bl_info['name']
@@ -34,8 +40,10 @@ def register():
 
 def unregister():
     if not Addon.dev_mode():
+        nearest_ortho_keymap.unregister()
         nearest_ortho_ui.unregister()
         nearest_ortho_ops.unregister()
+        nearest_ortho_prefs.unregister()
 
 
 if __name__ == '__main__':
