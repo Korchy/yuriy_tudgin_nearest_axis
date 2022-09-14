@@ -17,7 +17,7 @@ class NEAREST_AXIS_KeyMap:
         if context.window_manager.keyconfigs.addon:
             keymap = context.window_manager.keyconfigs.addon.keymaps.new(name='Window', space_type='EMPTY')
             # add keys
-            keymap_item = keymap.keymap_items.new('area_switcher.switch_area', 'D', 'PRESS', ctrl=True, shift=True)
+            keymap_item = keymap.keymap_items.new('nearest_axis.align', 'EQUAL', 'PRESS')
             cls._keymaps.append((keymap, keymap_item))
 
     @classmethod
