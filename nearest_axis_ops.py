@@ -2,7 +2,7 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#    https://github.com/Korchy/yuriy_tudgin_nearest_ortho
+#    https://github.com/Korchy/yuriy_tudgin_nearest_axis
 
 from bpy.types import Operator
 from bpy.utils import register_class, unregister_class
@@ -16,7 +16,7 @@ class NEAREST_AXIS_OT_align(Operator):
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
-        NearestAxis.nearest_axis(
+        NearestAxis.align_nearest(
            context=context
         )
         return {'FINISHED'}

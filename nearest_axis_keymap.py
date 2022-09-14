@@ -2,12 +2,12 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#   https://github.com/Korchy/blender_area_switcher
+#    https://github.com/Korchy/yuriy_tudgin_nearest_axis
 
 import bpy
 
 
-class AREA_SWITCHER_KeyMap:
+class NEAREST_AXIS_KeyMap:
 
     _keymaps = []
 
@@ -29,8 +29,8 @@ class AREA_SWITCHER_KeyMap:
 
 
 def register():
-    AREA_SWITCHER_KeyMap.register(context=bpy.context)
+    NEAREST_AXIS_KeyMap.register(context=bpy.context)
 
 
 def unregister():
-    AREA_SWITCHER_KeyMap.unregister()
+    NEAREST_AXIS_KeyMap.unregister()

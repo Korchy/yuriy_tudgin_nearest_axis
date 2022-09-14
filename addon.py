@@ -2,7 +2,7 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#    https://github.com/Korchy/yuriy_tudgin_nearest_ortho
+#    https://github.com/Korchy/yuriy_tudgin_nearest_axis
 
 import json
 import os

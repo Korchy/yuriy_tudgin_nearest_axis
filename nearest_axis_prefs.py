@@ -2,15 +2,15 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#    https://github.com/Korchy/yuriy_tudgin_nearest_ortho
+#    https://github.com/Korchy/yuriy_tudgin_nearest_axis
 
 from bpy.types import AddonPreferences
 from bpy.props import BoolProperty
 from bpy.utils import register_class, unregister_class
-from . import nearest_ortho_ui
+from . import nearest_axis_ui
 
 
-class NEAREST_ORTHO_preferences(AddonPreferences):
+class NEAREST_AXIS_preferences(AddonPreferences):
     bl_idname = __package__
 
     panel_viewport: BoolProperty(
@@ -28,14 +28,14 @@ class NEAREST_ORTHO_preferences(AddonPreferences):
     @staticmethod
     def _panel_viewport_update(self):
         if self.panel_viewport:
-            nearest_ortho_ui.register()
+            nearest_axis_ui.register()
         else:
-            nearest_ortho_ui.unregister()
+            nearest_axis_ui.unregister()
 
 
 def register():
-    register_class(NEAREST_ORTHO_preferences)
+    register_class(NEAREST_AXIS_preferences)
 
 
 def unregister():
-    unregister_class(NEAREST_ORTHO_preferences)
+    unregister_class(NEAREST_AXIS_preferences)
