@@ -6,17 +6,17 @@
 
 from bpy.types import Operator
 from bpy.utils import register_class, unregister_class
-from .nearest_ortho import NearestOrtho
+from .nearest_axis import NearestAxis
 
 
-class NEAREST_ORTHO_OT_main(Operator):
-    bl_idname = 'nearest_ortho.main'
-    bl_label = 'nearest_ortho: main'
-    bl_description = 'nearest_ortho - main operator'
+class NEAREST_AXIS_OT_align(Operator):
+    bl_idname = 'nearest_axis.align'
+    bl_label = 'Align'
+    bl_description = 'Align the 3D Viewport to the nearest axis'
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
-        NearestOrtho.nearest_ortho(
+        NearestAxis.nearest_axis(
            context=context
         )
         return {'FINISHED'}
@@ -27,8 +27,8 @@ class NEAREST_ORTHO_OT_main(Operator):
 
 
 def register():
-    register_class(NEAREST_ORTHO_OT_main)
+    register_class(NEAREST_AXIS_OT_align)
 
 
 def unregister():
-    unregister_class(NEAREST_ORTHO_OT_main)
+    unregister_class(NEAREST_AXIS_OT_align)
